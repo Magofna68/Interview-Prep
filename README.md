@@ -50,46 +50,14 @@
 
 ## Description
 
-_*This is a eCommerce clothing platform to imitate a commercial retail, online shopping experience*_
+_*Interview Preparation*_
 
-_*This webpage will act as an online shopping experience including:*_<br/>
+_*Need I say More?*_<br/>
 - Fully Fleshed Out Shopping Cart 
 - User Authentication For Purchases<br/>
 - Payment Processing<br/>
 
-_*This project mainly focused on utilizing the skills I have learned thus far and apply them to a web based application -- and later modified for dynamic viewing on mobile devices. Underground Royalty will provide the user with a fleshed out shopping experience, taking them from viewing products to payment processing*_
-
-# Technologies Used:
-
-1. Internet browser
-2. VS Code
-3. React
-4. React-Router -- routing 
-5. React-Bootstrap -- styling and design
-6. Stripe -- for payment processing
-7. Material-UI/Core -- styling / Icons
-8. Render -- for hosting STRIPE backend
-9. Notyf -- TOAST notifications
-<br>
-
-# Known Bugs:
-- Home breadcrumb is currently not redirecting back to homepage
-
-<br>
-
-# Support and contact details:
-
-_Brandon Magofna: Magofna68@gmail.com_
+_*Interview Prep will cover important concepts of Javascript, React, CSS, and other related languages to review while going through interview Process*_
 
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ...Thanks for coming to my TED talk.
