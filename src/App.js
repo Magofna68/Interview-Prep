@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import FlashcardList from './FlashcardList';
+import './app.css';
+import Background from './assets/Mountains.jpeg';
 
 function App() {
   const [ flashcards, setFlashcards ] = useState(SAMPLE_CARDS)
   return (
-    <FlashcardList flashcards={flashcards} />
+    <div style={{ backgroundImage: `url(${Background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <FlashcardList flashcards={flashcards} />
+    </div>
   );
 }
 
@@ -12,15 +16,13 @@ const SAMPLE_CARDS = [
   {
     id: 1,
     question: "What are the differences between Functional and Object-Oriented Programming?",
-    answer: "Functional programming relies on mathematical functions, whereas object-oriented programming relies on classes of objects closely associated with functions.",
-    answerArray: [],
+    answer: ["Functional programming relies on mathematical functions, whereas object-oriented programming relies on classes of objects closely associated with functions."],
     options: ['1', '2', '3', '4']
   },
   {
     id: 2,
     question: "Question 2",
-    answer: "Answer 2",
-    answerArray: [],
+    answer: [1, 2, 3],
     options: [
       '',
       '',
@@ -31,8 +33,7 @@ const SAMPLE_CARDS = [
   {
     id: 3,
     question:  "Question 3",
-    answer: "Answer 3",
-    answerArray: [],
+    answer: ['answer 3'],
     options: [
       '',
       '',
@@ -43,8 +44,7 @@ const SAMPLE_CARDS = [
   {
     id: 4,
     question:  "Can You Describe the Steps Involved in Software Development?",
-    answer: null,
-    answerArray: ['1. Planning phase -- developmental gameplan', '2. Coding and development methods', '3. Quality assurance and testing', '4. Completion and deployment'],
+    answer: ['1. Planning phase -- developmental gameplan', '2. Coding and development methods', '3. Quality assurance and testing', '4. Completion and deployment'],
     options: [
       '',
       '',
@@ -55,8 +55,7 @@ const SAMPLE_CARDS = [
   {
     id: 5,
     question:  "Tell Me About a Software Development Project You Completed Successfully",
-    answer: null,
-    answerArray: ['- The type of software development project.', '- Your role in the project.', '- The outcome of the project.',],
+    answer: ['- The type of software development project.', '- Your role in the project.', '- The outcome of the project.',],
     options: [
       '',
       '',

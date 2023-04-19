@@ -1,11 +1,20 @@
 
+
 .clickable {
 transition: all 1s ease;
 }
 .clickable:hover{
   cursor: pointer;
-  transform: scale(1.02);
-  color: rgb(247, 197, 197) !important;
-  font-size: larger;
-  background-color: white !important;
+  transform: scale(1.25) translate(-15%, -15%);
+  /* color: rgb(0, 0, 0) !important; */
+  font-size: 1.1rem;
+  background-color: rgb(242, 157, 157) !important;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: 
 }

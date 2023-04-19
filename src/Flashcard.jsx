@@ -10,7 +10,7 @@ export default function Flashcard({ flashcard }) {
     setTimeout(() => {
       // console.log('timeout hit')
       setShowAnswer(false);
-    }, 35000)
+    }, 3500)
   }
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function Flashcard({ flashcard }) {
       }}
     >
       {
+        
         showAnswer === false 
         ?
         <>
@@ -54,19 +55,18 @@ export default function Flashcard({ flashcard }) {
           ))}
         </>
         :
-      //   null
-      // }
-      //   {
-          flashcard.answerArray === []
-          ?
-          <div style={{ color: 'white'}} className='answer'>{flashcard.answer}</div>
-          :
-          <div style={{}} className='answerArray'>{flashcard.answerArray?.map(answer => (
+ 
+          <div style={{}} className='answerArray'>{flashcard.answer?.map(answer => (
             <div>
               <ul style={{margin: '2%', padding: '1%'}}>{answer}</ul>
             </div>
           ))}
           </div>
+
+      }
+
+
+        {
       }
     </div>
   )

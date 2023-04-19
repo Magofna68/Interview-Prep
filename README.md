@@ -53,9 +53,11 @@
 _*Interview Preparation*_
 
 _*Need I say More?*_<br/>
-- Fully Fleshed Out Shopping Cart 
-- User Authentication For Purchases<br/>
-- Payment Processing<br/>
+- Javascript 
+- Software development
+- Technical Challenges
+- Success metrics
+- Developer Characteristics<br/>
 
 _*Interview Prep will cover important concepts of Javascript, React, CSS, and other related languages to review while going through interview Process*_
 
