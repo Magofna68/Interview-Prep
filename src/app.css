@@ -1,0 +1,11 @@
+
+.clickable {
+transition: all 1s ease;
+}
+.clickable:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+  color: rgb(247, 197, 197) !important;
+  font-size: larger;
+  background-color: white !important;
+}
