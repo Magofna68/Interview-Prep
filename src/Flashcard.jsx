@@ -3,24 +3,36 @@ import './app.css';
 
 export default function Flashcard({ flashcard }) {
   const [showAnswer, setShowAnswer ] = useState(false);
+  const [ showHint, setShowHint ] = useState(false);
 
   const handleShowAnswer = () => {
-    // console.log("timeout started")
-    setShowAnswer(!showAnswer)
+    console.log("timeout started")
+    setShowAnswer(true)
     setTimeout(() => {
       // console.log('timeout hit')
       setShowAnswer(false);
     }, 3500)
   }
 
+  const handleShowHint = () => {
+    setShowHint(true);
+    setShowAnswer(false)
+    setTimeout(()=> {
+      setShowHint(false);
+    }, 5000)
+  }
+
   useEffect(() => {
     // console.log("showAnswer: ", showAnswer)
+    if (showAnswer === true && showHint === true) {
+      setShowAnswer(false);
+    }
   }, [showAnswer])
 
   return (
     <div 
       className='clickable'
-      onClick={handleShowAnswer}
+      onClick={() => handleShowAnswer()}
       key={flashcard.key}
       style={{
         width: '300px',
@@ -43,30 +55,59 @@ export default function Flashcard({ flashcard }) {
       }}
     >
       {
-        
-        showAnswer === false 
-        ?
-        <>
-        <div className='question'>{flashcard.question}</div>
-          {flashcard.options?.map(option => (
-            <div key={option.id} style={{ width: '90%', height: '15%', display: 'flex',}}>
-              <p>{option}</p>
-            </div>
-          ))}
-        </>
+        showHint === true && showAnswer === false ? 
+
+          flashcard.hint?.map(hint => (
+              <p style={{ fontSize: '12px', flexDirection: 'row'}} key={hint.id}>{hint}</p>
+          ))
+
         :
- 
-          <div style={{}} className='answerArray'>{flashcard.answer?.map(answer => (
+          showHint === false && showAnswer === false ?
+
+          <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', overflow: 'hidden', wordWrap: 'break-word' }}>
+            <div className='question' style={{ fontSize: '1rem'}}>{flashcard.question}</div>
+            <span style={{
+              // display: 'flex',
+              // alignSelf: 'end',
+              // justifyContent: 'right',
+              // alignContent: 'right',
+              // alignItems: 'baseline',
+              position: 'fixed',
+              bottom: '1%',
+              right: '1%',
+              width: '50px',
+              backgroundColor: 'orange',
+            }}>
+              <button onClick={()=> handleShowHint()} style={{ width: '100%',}}>HINT</button>
+            </span>
+            </div>
+        :
+          showAnswer === true && showHint === true ?
+          flashcard.answer?.map(answer => (
+          <div>
+            <ul style={{margin: '2%', padding: '1%'}}>{answer}</ul>
+          </div>
+          ))
+        :
+            showAnswer === true ?
+          // <div style={{}} className='answerArray'>
+            flashcard.answer?.map(answer => (
             <div>
               <ul style={{margin: '2%', padding: '1%'}}>{answer}</ul>
             </div>
-          ))}
+          ))
+
+        :
+
+        showAnswer === true && showHint === true ?
+          flashcard.answer?.map(answer => (
+          <div>
+            <ul style={{margin: '2%', padding: '1%'}}>{answer}</ul>
           </div>
+        ))
+        :
+            <h1>REWORK ternary</h1>
 
-      }
-
-
-        {
       }
     </div>
   )
